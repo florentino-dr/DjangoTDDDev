@@ -5,21 +5,21 @@ class NewVisitorTest(unittest.TestCase):
 
 	def setUp(self):
 		self.browser = webdriver.Firefox()
-		self.browser.implicity_wait(3)
+		self.browser.implicitly_wait(3)
 
 	def tearDown(self):
 		self.browser.quit()
 
 	def test_can_start_a_list_and_retrieve_it_later(self):
 		# Edith has heard about a cool new online to-do app. She goes
-        # to check out its homepage
-        self.browser('http://localhost:8000')
+		# to check out its homepage
+		self.browser.get('http://localhost:8000')
 
-        # She notices the page title and header mention to-do lists
-        self.assertIn('To-Do', self.browser.title)
-        self.fail('Finish the test!')
+		# She notices the page title and header mention to-do lists
+		self.assertIn('To-Do', self.browser.title)
+		self.fail('Finish the test!')
 
-        # She is invited to enter a to-do item straight away
+		# She is invited to enter a to-do item straight away
 
 		# She types "Buy peacock feathers" into a text box (Edith's hobby
 		# is tying fly-fishing lures)
@@ -40,5 +40,5 @@ class NewVisitorTest(unittest.TestCase):
 
 		# Satisfied, she goes back to sleep
 
-if name == '__main__':
-	unittest.main(warnings='ignore')
+if __name__ == '__main__':
+	unittest.main()
